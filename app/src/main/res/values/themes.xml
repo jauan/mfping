@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Mfping" parent="Theme.MaterialComponents.Light" />
+</resources>

@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">mfping</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Network Dashboard</string>
+    <string name="refresh">Refresh</string>
+    <string name="connected">Connected</string>
+    <string name="no_connection">No Connection</string>
+    <string name="local_ip_title">Local IP Address</string>
+    <string name="local_ip_desc">Internal network address</string>
+    <string name="public_ip_title">Public IP Address</string>
+    <string name="public_ip_desc">External internet address</string>
+    <string name="connection_type_title">Connection Type</string>
+    <string name="connection_type_desc">Current network protocol</string>
+    <string name="open_ping_tool">Open Ping Tool</string>
+
+    <!-- Connection Types -->
+    <string name="conn_wifi">Wi-Fi</string>
+    <string name="conn_cellular">Cellular</string>
+    <string name="conn_ethernet">Ethernet</string>
+    <string name="conn_other">Other</string>
+    <string name="conn_none">None</string>
+    <string name="loading">Loading...</string>
+    <string name="unknown">Unknown</string>
+    <string name="error">Error</string>
+    <string name="offline">Offline</string>
+    <string name="empty_body">Empty body</string>
+
+    <!-- Ping Screen -->
+    <string name="ping_title">ICMP Ping</string>
+    <string name="host_input_label">Hostname or IP</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="live_logs">Live Logs</string>
+    <string name="min">Min</string>
+    <string name="max">Max</string>
+    <string name="avg">Avg</string>
+    <string name="sent">Sent</string>
+    <string name="ping_back">Back</string>
+    <string name="pinging">Pinging...</string>
+    <string name="ping_log_format">Seq %1$d: %2$.1f ms (ttl=%3$d)</string>
+    <string name="ping_error_format">Error: %1$s</string>
+    <string name="ping_timeout">Request timed out</string>
+
+    <!-- Discovery Screen (Device List) -->
+    <string name="device_list_title">Discovered Devices</string>
+    <string name="no_devices_found">No devices found on local network</string>
+    <string name="unknown_device">Unknown Device</string>
+    <string name="discover_devices">Discover Devices</string>
+
+    <!-- Subnet Scan -->
+    <string name="subnet_scan_title">Subnet Scanner</string>
+    <string name="start_scan">Start Scan</string>
+
+    <!-- Port Scanner -->
+    <string name="port_scan_title">Port Scanner</string>
+    <string name="custom_ports_label">Ports (comma separated)</string>
+    <string name="custom_ports_hint">e.g. 80, 443, 8080</string>
+    <string name="unknown_service">Unknown Service</string>
+    <string name="scan_ports">Scan Ports</string>
+
+    <!-- Traceroute -->
+    <string name="traceroute_title">Traceroute</string>
+    <string name="traceroute">Traceroute</string>
+
+    <!-- Adaptive Placeholder -->
+    <string name="detail_placeholder">Select an action to start</string>
+</resources>

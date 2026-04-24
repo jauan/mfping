@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">mfping</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">网络控制面板</string>
+    <string name="refresh">刷新</string>
+    <string name="connected">已连接</string>
+    <string name="no_connection">未连接</string>
+    <string name="local_ip_title">本地 IP 地址</string>
+    <string name="local_ip_desc">内部网络地址</string>
+    <string name="public_ip_title">公网 IP 地址</string>
+    <string name="public_ip_desc">外部互联网地址</string>
+    <string name="connection_type_title">连接类型</string>
+    <string name="connection_type_desc">当前网络协议</string>
+    <string name="open_ping_tool">打开 Ping 工具</string>
+
+    <!-- Connection Types -->
+    <string name="conn_wifi">Wi-Fi</string>
+    <string name="conn_cellular">移动网络</string>
+    <string name="conn_ethernet">以太网</string>
+    <string name="conn_other">其他</string>
+    <string name="conn_none">无</string>
+    <string name="loading">加载中…</string>
+    <string name="unknown">未知</string>
+    <string name="error">错误</string>
+    <string name="offline">离线</string>
+    <string name="empty_body">响应体为空</string>
+
+    <!-- Ping Screen -->
+    <string name="ping_title">ICMP Ping</string>
+    <string name="host_input_label">主机名或 IP 地址</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="live_logs">实时日志</string>
+    <string name="min">最小</string>
+    <string name="max">最大</string>
+    <string name="avg">平均</string>
+    <string name="sent">已发送</string>
+    <string name="ping_back">返回</string>
+    <string name="pinging">正在 Ping…</string>
+    <string name="ping_log_format">Seq %1$d: %2$.1f ms (ttl=%3$d)</string>
+    <string name="ping_error_format">错误: %1$s</string>
+    <string name="ping_timeout">请求超时</string>
+
+    <!-- Discovery Screen (Device List) -->
+    <string name="device_list_title">已发现设备</string>
+    <string name="no_devices_found">在本地网络中未发现设备</string>
+    <string name="unknown_device">未知设备</string>
+    <string name="discover_devices">发现设备</string>
+
+    <!-- Subnet Scan -->
+    <string name="subnet_scan_title">子网扫描</string>
+    <string name="start_scan">开始扫描</string>
+
+    <!-- Port Scanner -->
+    <string name="port_scan_title">端口扫描</string>
+    <string name="custom_ports_label">端口（逗号分隔）</string>
+    <string name="custom_ports_hint">例如: 80, 443, 8080</string>
+    <string name="unknown_service">未知服务</string>
+    <string name="scan_ports">扫描端口</string>
+
+    <!-- Traceroute -->
+    <string name="traceroute_title">路由追踪</string>
+    <string name="traceroute">路由追踪</string>
+
+    <!-- Adaptive Placeholder -->
+    <string name="detail_placeholder">请选择一个操作开始</string>
+</resources>
