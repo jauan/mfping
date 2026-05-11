@@ -66,13 +66,22 @@ fun SubnetScanScreen(
             OutlinedTextField(
                 value = ipPrefix,
                 onValueChange = { 
-                    // 过滤非数字和点的输入，防止格式破坏
                     ipPrefix = it.filter { char -> char.isDigit() || char == '.' }
                 },
                 label = { Text("Network Prefix") },
                 placeholder = { Text("e.g. 192.168.1") },
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
-                trailingIcon = { Text(".0/24 ", color = MaterialTheme.colorScheme.onSurfaceVariant) }
+                trailingIcon = { 
+                    Button(
+                        onClick = { viewModel.startSubnetScan(ipPrefix) },
+                        enabled = !scanState.isScanning && ipPrefix.isNotEmpty(),
+                        shape = RoundedCornerShape(8.dp),
+                        modifier = Modifier.padding(end = 4.dp).height(40.dp),
+                        contentPadding = PaddingValues(horizontal = 12.dp)
+                    ) {
+                        Text(stringResource(id = R.string.start))
+                    }
+                }
             )
 
             Spacer(modifier = Modifier.height(12.dp))

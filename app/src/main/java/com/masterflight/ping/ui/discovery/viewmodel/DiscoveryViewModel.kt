@@ -1,5 +1,6 @@
 package com.masterflight.ping.ui.discovery.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.masterflight.ping.data.network.DiscoveredDevice
@@ -13,6 +14,8 @@ import kotlinx.coroutines.launch
 
 class DiscoveryViewModel(private val repository: DiscoveryRepository) : ViewModel() {
 
+    private val TAG = "DiscoveryVM"
+
     private val _scanState = MutableStateFlow(SubnetScanState())
     val scanState: StateFlow<SubnetScanState> = _scanState.asStateFlow()
 
@@ -23,32 +26,49 @@ class DiscoveryViewModel(private val repository: DiscoveryRepository) : ViewMode
     val isDiscovering: StateFlow<Boolean> = _isDiscovering.asStateFlow()
 
     fun startDiscovery(localIp: String) {
+        Log.d(TAG, "startDiscovery: $localIp")
         viewModelScope.launch {
             _isDiscovering.value = true
-            repository.discoverDevices(localIp).collect { discovered ->
-                _devices.value = discovered
+            try {
+                repository.discoverDevices(localIp).collect { discovered ->
+                    _devices.value = discovered
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Discovery error", e)
+            } finally {
                 _isDiscovering.value = false
             }
         }
     }
 
     fun startSubnetScan(inputPrefix: String) {
-        // 如果输入的就是前缀（如 192.168.7），直接使用
-        // 如果输入的是完整 IP，提取前缀
+        Log.d(TAG, "startSubnetScan input: $inputPrefix")
+        
+        // 智能前缀提取逻辑
         val prefix = if (inputPrefix.count { it == '.' } >= 3) {
             inputPrefix.substringBeforeLast(".")
         } else {
             inputPrefix.trimEnd('.')
         }
-
-        if (prefix.isEmpty()) return
+        
+        Log.d(TAG, "startSubnetScan resolved prefix: $prefix")
+        
+        if (prefix.isEmpty()) {
+            Log.w(TAG, "Prefix is empty, skipping scan")
+            return
+        }
 
         viewModelScope.launch {
             _scanState.value = _scanState.value.copy(isScanning = true, currentIpPrefix = prefix)
-            repository.scanSubnet(prefix).collect { results ->
-                _scanState.value = _scanState.value.copy(results = results)
+            try {
+                repository.scanSubnet(prefix).collect { results ->
+                    _scanState.value = _scanState.value.copy(results = results)
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Subnet scan error", e)
+            } finally {
+                _scanState.value = _scanState.value.copy(isScanning = false)
             }
-            _scanState.value = _scanState.value.copy(isScanning = false)
         }
     }
 }

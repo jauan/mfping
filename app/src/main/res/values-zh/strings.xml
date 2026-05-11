@@ -10,6 +10,7 @@
     <string name="local_ip_desc">内部网络地址</string>
     <string name="public_ip_title">公网 IP 地址</string>
     <string name="public_ip_desc">外部互联网地址</string>
+    <string name="exit_location_title">出口位置</string>
     <string name="connection_type_title">连接类型</string>
     <string name="connection_type_desc">当前网络协议</string>
     <string name="open_ping_tool">打开 Ping 工具</string>

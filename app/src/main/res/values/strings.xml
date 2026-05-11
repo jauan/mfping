@@ -10,6 +10,7 @@
     <string name="local_ip_desc">Internal network address</string>
     <string name="public_ip_title">Public IP Address</string>
     <string name="public_ip_desc">External internet address</string>
+    <string name="exit_location_title">Exit Location</string>
     <string name="connection_type_title">Connection Type</string>
     <string name="connection_type_desc">Current network protocol</string>
     <string name="open_ping_tool">Open Ping Tool</string>

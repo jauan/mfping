@@ -104,6 +104,15 @@ fun DashboardScreen(
                     icon = Icons.Rounded.Public
                 )
 
+                if (networkStatus.location.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    CompactDetailCard(
+                        title = stringResource(id = R.string.exit_location_title),
+                        value = networkStatus.location,
+                        icon = Icons.Rounded.LocationOn
+                    )
+                }
+
                 Spacer(modifier = Modifier.height(24.dp))
 
                 // 功能按钮区域
@@ -137,6 +146,14 @@ fun DashboardScreen(
                         onClick = onNavigateToTrace
                     )
                 }
+                
+                Spacer(modifier = Modifier.height(32.dp))
+                
+                Text(
+                    text = "v1.1.1",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+                )
                 
                 Spacer(modifier = Modifier.height(16.dp))
             }
